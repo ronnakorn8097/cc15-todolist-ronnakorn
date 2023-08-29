@@ -1,23 +1,23 @@
 import "./Header.scss";
-import { FaHome, FaSearch } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
+import Search from "./Search"; // import search สามารถตั้งชื่ออะไรก็ได้ แต่ใน tag jsx ต้องตั้งตาม แต่จะทำให้ ลำบากทำไมหวะ
 
 function Header() {
   return (
     <header className="header">
+
       <div className="header__logo">
         <FaHome />
       </div>
+
       <div className="header__text">
         <h1>TodoList</h1>
       </div>
+
       <div className="header__search">
-        <div className="search">
-          <span className="search__icon">
-            <FaSearch/>
-          </span>
-          <input type="text" placeholder="search" className="search__input"/>
-        </div>
+        <Search/>
       </div>
+
     </header>
   );
 }
