@@ -1,8 +1,8 @@
 
 @import "./index.scss";
 
-$header-height:60px;
-$sidebar-width:300px;
+
+
 
 .todo{
     display: grid;
@@ -51,40 +51,3 @@ $sidebar-width:300px;
 //     grid-column-end: -1;
 //     background-color: red;
 // }
-
-// Header
-
-.header{
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background-color: $primary;
-    height: $header-height;
-    padding: 5px 20px;
-
-
-    &__logo{
-        font-size: 2.4rem;
-        color: $white;
-        display: flex;
-
-    }
-    &__text{
-        flex: 1;
-        color: $white;
-
-        & > h1 {
-            font-size: 2.4rem;
-            display: inline;
-        }
-
-    }
-    &__search{
-        min-width: 300px;
-       
-        
-    }
-}
-
-
-
