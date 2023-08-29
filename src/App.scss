@@ -1,3 +1,6 @@
+
+@import "./index.scss";
+
 $header-height:60px;
 $sidebar-width:300px;
 
@@ -13,7 +16,6 @@ $sidebar-width:300px;
         // grid-row-end: 2 ;
         // grid-column-start: 1;
         // grid-column-end: -1;
-
         //ย่อจากดา้านบน
         grid-row: 1/2;
         grid-column: 1/-1;
@@ -24,7 +26,6 @@ $sidebar-width:300px;
         // grid-row-end: -1;
         // grid-column-start: 1;
         // grid-column-end: 2;
-
         grid-row: 2/-1;
         // grid-column: 1/2;
         grid-column: 1/span 1;
@@ -35,7 +36,6 @@ $sidebar-width:300px;
         // grid-row-end: -1;
         // grid-column-start: 2;
         // grid-column-end: -1;
-
         grid-row: 2/-1;
         grid-column: 2/-1;
 
@@ -51,6 +51,40 @@ $sidebar-width:300px;
 //     grid-column-end: -1;
 //     background-color: red;
 // }
+
+// Header
+
+.header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: $primary;
+    height: $header-height;
+    padding: 5px 20px;
+
+
+    &__logo{
+        font-size: 2.4rem;
+        color: $white;
+        display: flex;
+
+    }
+    &__text{
+        flex: 1;
+        color: $white;
+
+        & > h1 {
+            font-size: 2.4rem;
+            display: inline;
+        }
+
+    }
+    &__search{
+        min-width: 300px;
+       
+        
+    }
+}
 
 
 
