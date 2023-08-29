@@ -1,7 +1,7 @@
 import "./App.scss";
 // import { FaHome} from "react-icons/fa";
 // import { CiHome } from "react-icons/ci";
-import Header from "./Header";
+import Header from "../Components/Header";
 
 
 function App() {
