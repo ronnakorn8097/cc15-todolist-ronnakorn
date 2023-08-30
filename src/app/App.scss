@@ -51,3 +51,40 @@
 //     grid-column-end: -1;
 //     background-color: red;
 // }
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 30px;
+    // background-color: wheat;
+    height: calc(100vh - $header-height);
+  }
+
+  //block
+  .list{
+    //element
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+
+
+    &__item{
+        display: flex;
+        gap: 15px;
+        font-size: 2rem;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        //Modify
+        &:hover{
+            background-color:$grey-light;
+        }
+        &__text{
+            font-weight: 500;
+        }
+        
+        
+        }
+  }
