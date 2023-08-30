@@ -1,47 +1,39 @@
-
 @import "../index.scss";
 
+.todo {
+  display: grid;
+  grid-template-rows: $header-height calc(100vh - $header-height);
+  grid-template-columns: $sidebar-width calc(100vw - $sidebar-width);
 
-
-
-.todo{
-    display: grid;
-    grid-template-rows: $header-height calc(100vh - $header-height);
-    grid-template-columns: $sidebar-width calc(100vw - $sidebar-width);
-
-///// อยู่ ใน class todo ทั้งหมด
-/// ////////////////////////////
-    &__header{
-        // grid-row-start: 1;
-        // grid-row-end: 2 ;
-        // grid-column-start: 1;
-        // grid-column-end: -1;
-        //ย่อจากดา้านบน
-        grid-row: 1/2;
-        grid-column: 1/-1;
-
-    }
-    &__sidebar{
-        // grid-row-start: 2;
-        // grid-row-end: -1;
-        // grid-column-start: 1;
-        // grid-column-end: 2;
-        grid-row: 2/-1;
-        // grid-column: 1/2;
-        grid-column: 1/span 1;
-    }
-    &__content
-    {
-        // grid-row-start: 2;
-        // grid-row-end: -1;
-        // grid-column-start: 2;
-        // grid-column-end: -1;
-        grid-row: 2/-1;
-        grid-column: 2/-1;
-
-    }
+  ///// อยู่ ใน class todo ทั้งหมด
+  /// ////////////////////////////
+  &__header {
+    // grid-row-start: 1;
+    // grid-row-end: 2 ;
+    // grid-column-start: 1;
+    // grid-column-end: -1;
+    //ย่อจากดา้านบน
+    grid-row: 1/2;
+    grid-column: 1/-1;
+  }
+  &__sidebar {
+    // grid-row-start: 2;
+    // grid-row-end: -1;
+    // grid-column-start: 1;
+    // grid-column-end: 2;
+    grid-row: 2/-1;
+    // grid-column: 1/2;
+    grid-column: 1 / span 1;
+  }
+  &__content {
+    // grid-row-start: 2;
+    // grid-row-end: -1;
+    // grid-column-start: 2;
+    // grid-column-end: -1;
+    grid-row: 2/-1;
+    grid-column: 2/-1;
+  }
 }
-
 
 // ย้าย class ทั้งหมด ไปไว้ ด้านบน
 // .todo__header{
@@ -52,39 +44,46 @@
 //     background-color: red;
 // }
 
+////////// side Bar ////////////
 .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: 20px 30px;
-    // background-color: wheat;
-    height: calc(100vh - $header-height);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px 30px;
+  // background-color: wheat;
+  height: calc(100vh - $header-height);
+}
+
+.accordion {
+  &__toggle {
   }
 
-  //block
-  .list{
-    //element
+  //Element
+  &__item {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    
+    gap: 15px;
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: 900;
 
+    &__icon {
+      cursor: pointer;
+      transition: 1s;
+    }
 
-    &__item{
-        display: flex;
-        gap: 15px;
-        font-size: 2rem;
-        padding: 10px;
-        border-radius: 4px;
-        cursor: pointer;
-        //Modify
-        &:hover{
-            background-color:$grey-light;
-        }
-        &__text{
-            font-weight: 500;
-        }
-        
-        
-        }
+    &__active{
+        transform: rotate(-90deg);
+      }
+
+    &__text {
+      font-weight: inherit;
+    }
+
+  
   }
+
+
+}
+
+
