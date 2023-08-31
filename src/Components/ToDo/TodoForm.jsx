@@ -59,7 +59,7 @@ function TodoForm(props) {
   const handleCancel = function(){
     console.log('cancel');
     // correctName : setIsOpenForm(false)
-    // incorrectName : undefined (false) => ระบเิดแดง แน่นวล
+    // incorrectName : undefined (false) => ระเบิดแดง แน่นวล
     props.setIsOpenForm(false);
 
   }
