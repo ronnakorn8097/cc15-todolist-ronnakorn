@@ -33,16 +33,27 @@ function TodoForm(props) {
 
   
   const handleChangeInput =function (event) {
-    // console.log('user typing....',event.target.value);
+
+    if(isError) setIsError(false);
     setTaskInput(event.target.value);
   }
 
   const handleSubmit= function(event){
+    // 1.PreventDefault
     event.preventDefault();
-    // FormValidation
-    //case 1 : submit ได้
+    // 2.รู้ก่อนว่า user พิมพ์อะไร (อยู่ใน state : TaskInput)
+
+    // 3.FormValidation
+    //case 1 : submit ได้ => ไม่ error
     //case 2 : submit ไม่ได้ ต้องแสดง error
+    if(taskInput.trim()=='')
+    {
+      console.log('error');
+      setIsError(true);
+      return;
+    }
     console.log('Submited');
+    
   }
 
   const handleCancel = function(){

@@ -53,7 +53,7 @@ const [isOpenForm,setIsOpenForm] = useState(false);
 
   // #2 JS Function ทำหน้าที่พวก logic
   const handleClick = function(){
-     console.log('Clicked');
+    //  console.log('Clicked');
      setIsOpenForm(!isOpenForm);
     // active = !active;
     // console.log('Click',active);
