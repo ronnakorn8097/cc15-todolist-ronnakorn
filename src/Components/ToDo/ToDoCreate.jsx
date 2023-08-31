@@ -39,6 +39,8 @@ CC5 React State (1 ใน function ของกลุ่มที่เรีย
 const [state , setState] = useState(initialState : any)
 // element 1 : current state
 // element 2 : fn สำหรับ setState อัพเดทค่า initialState
+// เมื่อ state เปลี่ยน function component จะ Rerender
+// Rerender == code ทั้งหมด ใน Function จะถูกรันใหม่ 1 ครั้ง
 */
 
 let active =true;
@@ -47,11 +49,10 @@ let active =true;
 function TodoCreate() {
   // Hook Function
 const [isOpenForm,setIsOpenForm] = useState(false);
-console.log(isOpenForm);
 
 
   // #2 JS Function ทำหน้าที่พวก logic
-  const handleClick = function(event){
+  const handleClick = function(){
      console.log('Clicked');
      setIsOpenForm(!isOpenForm);
     // active = !active;
