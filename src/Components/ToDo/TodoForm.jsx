@@ -18,6 +18,14 @@ CC1 - Form Handle
             - type = "button" <button type="submit">2</button>
   */
 
+/*
+  props = {
+    textSubmit : string,
+    setIsOpenForm : function
+  }   
+            
+*/
+
 function TodoForm(props) {
   
   const [isError , setIsError] = useState(false);
@@ -29,6 +37,10 @@ function TodoForm(props) {
 
   const handleCancel = function(){
     console.log('cancel');
+    // correctName : setIsOpenForm(false)
+    // incorrectName : undefined (false) => ระบเิดแดง แน่นวล
+    props.setIsOpenForm(false);
+
   }
 
   return (
