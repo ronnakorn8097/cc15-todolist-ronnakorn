@@ -1,5 +1,6 @@
 import styles from './TodoForm.module.scss';
 import {Button} from '../Common/Button/Button';
+import { useState } from 'react';
 
 /*
   props = {
@@ -7,19 +8,40 @@ import {Button} from '../Common/Button/Button';
   }
 */
 
+/*
+CC1 - Form Handle
+  - ใช้ function ไปผูกกับ event ชื่อ onSubmit
+  - function จะถูก browser เรียนกใช้ เมื่อไหร่ ? โดยส่ง parameter มา 1 ตัว (event object)
+  - โดย default ทุกปุ่ม ใน <form> จะทำหน้าที่ submit (ถ้าไม่ทำทุกปุ่มจะถือว่าเป็น submit หมด)
+        - วิธีแก้ ต้องกำหนด type ของ ปุ่ม
+            - type="submit" <button type="button">1</button>
+            - type = "button" <button type="submit">2</button>
+  */
+
 function TodoForm(props) {
   
+  const [isError , setIsError] = useState(false);
+
+  const handleSubmit= function(event){
+    event.preventDefault();
+    console.log('Submited');
+  }
+
   return (
-    <form className={styles.todo__form__container}>
+    <form
+     className={styles.todo__form__container}
+     onSubmit={handleSubmit}
+     >
       {/*	Body */}
       <input className={styles.todo__form__input} placeholder='Task Name' />
 
       {/*Form Footer */}
       <div className={styles.todo__form__footer}>
-        <p className={styles.todo__error}>Title is required</p>
+       {isError ? <p className={styles.todo__error}>Title is required</p>: null}
         <div className={styles.todo__form__buttons}>
-          <Button text="Cancel" active={false}/>
-          <Button text={props.textSubmit} active={true}/>
+          <Button text="Cancel" active={false} type="button"/>
+          <Button text={props.textSubmit} active={true} type="submmit"/>
+     
           {/* <button>Cancel</button>
           <button>Add Task</button> */}
         </div>

@@ -7,7 +7,7 @@ import TodoForm from './TodoForm';
 
 
 /*
-CC 1 - condution redering
+CC 1 - condition redering
  - Default : show button & text
  - Active : Show TodForm
 
@@ -43,7 +43,7 @@ const [state , setState] = useState(initialState : any)
 // Rerender == code ทั้งหมด ใน Function จะถูกรันใหม่ 1 ครั้ง
 */
 
-let active =true;
+// let active = true;
 
 // #1 function component
 function TodoCreate() {
