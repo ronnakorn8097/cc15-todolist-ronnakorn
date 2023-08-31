@@ -63,7 +63,7 @@ const [isOpenForm,setIsOpenForm] = useState(false);
   return (
 
     <>
-    { isOpenForm ? ( <TodoForm/>
+    { isOpenForm ? ( <TodoForm textSubmit="Add Task"/>
     ) : <div className={styles.todo__create} onClick={handleClick}>
     <div className={styles.todo__create__button}>
       <HiPlus />

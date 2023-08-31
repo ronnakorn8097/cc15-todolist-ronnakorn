@@ -1,7 +1,14 @@
 import styles from './TodoForm.module.scss';
 import {Button} from '../Common/Button/Button';
 
-function TodoForm() {
+/*
+  props = {
+    textSubmit : string
+  }
+*/
+
+function TodoForm(props) {
+  
   return (
     <form className={styles.todo__form__container}>
       {/*	Body */}
@@ -12,7 +19,7 @@ function TodoForm() {
         <p className={styles.todo__error}>Title is required</p>
         <div className={styles.todo__form__buttons}>
           <Button text="Cancel" active={false}/>
-          <Button text="Add Task" active={true}/>
+          <Button text={props.textSubmit} active={true}/>
           {/* <button>Cancel</button>
           <button>Add Task</button> */}
         </div>
