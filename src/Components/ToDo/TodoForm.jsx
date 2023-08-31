@@ -27,6 +27,10 @@ function TodoForm(props) {
     console.log('Submited');
   }
 
+  const handleCancel = function(){
+    console.log('cancel');
+  }
+
   return (
     <form
      className={styles.todo__form__container}
@@ -39,8 +43,11 @@ function TodoForm(props) {
       <div className={styles.todo__form__footer}>
        {isError ? <p className={styles.todo__error}>Title is required</p>: null}
         <div className={styles.todo__form__buttons}>
-          <Button text="Cancel" active={false} type="button"/>
+
+          <Button text="Cancel" active={false} type="button" onClick={handleCancel}/>
           <Button text={props.textSubmit} active={true} type="submmit"/>
+
+         
      
           {/* <button>Cancel</button>
           <button>Add Task</button> */}
