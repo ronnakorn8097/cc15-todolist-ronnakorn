@@ -1,11 +1,12 @@
 // Dependencies
 import './App.scss';
-import { FaHome, FaInbox, FaCalendar, FaCalendarAlt,FaChevronDown } from 'react-icons/fa';
+import { FaInbox, FaCalendar, FaCalendarAlt,FaChevronDown } from 'react-icons/fa';
 import Header from '../Components/Header';
-import ListItem from '../Components/ListItem';
+// import ListItem from '../Components/ListItem';
 import Lists from '../Components/Lists';
 import TodoHeader from '../Components/ToDo/ToDoHeader';
 import ToDoCreate from '../Components/ToDo/ToDoCreate';
+import ToDoLists from '../Components/ToDo/ToDoLists';
 
 function App() {
 
@@ -60,7 +61,7 @@ function App() {
                 {/* CreateToDo */}
                 <ToDoCreate/>
                 {/* ToDoLists */}
-
+                <ToDoLists/>
               </main>
             </div>
         </div>
@@ -79,9 +80,6 @@ export default App;
 
 
 // เขียนไว้ในบรรทัดที่ 72  เขียนย่อ
-{/* <Lists data={projectLists}/> */}
-
-// เขียนเต็ม
      {/* Lists */}
                     {/* <ul className="list"> */}
                       {/* <ListItem text="Project-A" icon={<FaInbox />} active={true} />
