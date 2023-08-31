@@ -24,12 +24,14 @@ function SideBar() {
           {/* Toggle */}
           <div className={styles.accordion__toggle}>
             <li className={styles.accordion__item}>
+              {/*  */}
               <FaChevronDown
                 className={`${styles.accordion__item__icon} ${styles.accordion__item__active}'`}
               />
               <p className={styles.accordion__item__text}>Projects</p>
             </li>
           </div>
+           {/* List */}
           <Lists data={projectLists} />
         </div>
       </section>
