@@ -6,7 +6,7 @@ import { useState } from "react";
 import TodoForm from './TodoForm'
 
 
-function TodoItem({id,task,done,date}) { 
+function TodoItem({id,task,done,date,deleteTodo,editTodo}) { 
 
 
 
@@ -16,12 +16,21 @@ function TodoItem({id,task,done,date}) {
     {
       setIsOpenForm(!isOpenForm);
     }
+
+    const toggleStatus = ()=>{
+      const newTodoObj = {id,task,date,status:!done};
+      editTodo(id,newTodoObj);
+    }
+
   return (
     <>
+    
     { isOpenForm ?  ( <TodoForm textSubmit="Edit Task" setIsOpenForm={setIsOpenForm}/> ) :
     <li className={styles.todo}>
       <div className={`${styles.todo__checkbox} ${done ? styles.todo__checkbox__done : ''}`}>
-        <HiOutlineCheck className={styles.todo__checkbox__icon}/>
+        <HiOutlineCheck className={styles.todo__checkbox__icon}
+        onClick={toggleStatus}
+        />
       </div>
       
       <p className={`{$styles.todo__task} ${done ? styles.todo__task__done : ''}`}>{task}</p>
@@ -31,10 +40,11 @@ function TodoItem({id,task,done,date}) {
         <span onClick={handleClick}>
           <FaPen className={styles.todo__edit} />
         </span>
-        <span>
+        <span onClick={()=>deleteTodo(id)}>
           <FaTrashAlt className={styles.todo__delete} />
         </span>
       </div> 
+  
       </li>}
     </>
   )
