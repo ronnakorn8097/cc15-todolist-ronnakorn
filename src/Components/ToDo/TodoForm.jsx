@@ -47,6 +47,8 @@ function TodoForm(props) {
     // 3.FormValidation
     //case 1 : submit ได้ => ไม่ error
     //case 2 : submit ไม่ได้ ต้องแสดง error
+
+     // Start Logic : For Cerate ToDo
     if(taskInput.trim()=='')
     {
       console.log('error');
@@ -62,14 +64,16 @@ function TodoForm(props) {
     //oldState = [{o},{o},{o}] === props.data
     // newState = [{n},{o},{o}]
 
+   
     const newTodo = {
       id:nanoid(),
       task:taskInput,
       status:false,
       due_date:"2023-01-09"};
-    const newTodoLists = [newTodo,...props.data];
+    // const newTodoLists = [newTodo,...props.data];
+    //End logic : For create ToDo
 
-    props.setTodo(newTodoLists);
+    props.setTodo((prev)=>[newTodo,...prev]);
     props.setIsOpenForm(false);
   }
 
