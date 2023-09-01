@@ -46,7 +46,7 @@ const [state , setState] = useState(initialState : any)
 // let active = true;
 
 // #1 function component
-function TodoCreate() {
+function TodoCreate(props) {
   // Hook Function
 const [isOpenForm,setIsOpenForm] = useState(false);
 
@@ -63,7 +63,11 @@ const [isOpenForm,setIsOpenForm] = useState(false);
   return (
 
     <>
-    { isOpenForm ? ( <TodoForm textSubmit="Add Task" setIsOpenForm={setIsOpenForm}/>
+    { isOpenForm ? ( <TodoForm textSubmit="Add Task" 
+    setIsOpenForm={setIsOpenForm} 
+    data={props.data}
+    setTodo={props.setTodo}
+    />
     ) : <div className={styles.todo__create} onClick={handleClick}>
     <div className={styles.todo__create__button}>
       <HiPlus />
