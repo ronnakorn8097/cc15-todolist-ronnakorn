@@ -3,29 +3,6 @@ import {Button} from '../Common/Button/Button';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 
-/*
-  props = {
-    textSubmit : string
-  }
-*/
-
-/*
-CC1 - Form Handle
-  - ใช้ function ไปผูกกับ event ชื่อ onSubmit
-  - function จะถูก browser เรียนกใช้ เมื่อไหร่ ? โดยส่ง parameter มา 1 ตัว (event object)
-  - โดย default ทุกปุ่ม ใน <form> จะทำหน้าที่ submit (ถ้าไม่ทำทุกปุ่มจะถือว่าเป็น submit หมด)
-        - วิธีแก้ ต้องกำหนด type ของ ปุ่ม
-            - type="submit" <button type="button">1</button>
-            - type = "button" <button type="submit">2</button>
-  */
-
-/*
-  props = {
-    textSubmit : string,
-    setIsOpenForm : function
-  }   
-            
-*/
 
 function TodoForm(props) {
   
@@ -40,43 +17,15 @@ function TodoForm(props) {
   }
 
   const handleSubmit= function(event){
-    // 1.PreventDefault
+   
     event.preventDefault();
-    // 2.รู้ก่อนว่า user พิมพ์อะไร (อยู่ใน state : TaskInput)
 
-    // 3.FormValidation
-    //case 1 : submit ได้ => ไม่ error
-    //case 2 : submit ไม่ได้ ต้องแสดง error
-
-     // Start Logic : For Cerate ToDo
     if(taskInput.trim()=='')
     {
       setIsError(true);
       return;
     }
-    ///////////// ไม่ใช้แล่ว - 79 //////////////////////
-    // console.log('Submited == Create new todo');
-    // // create new todo
-    // // 1 - ส่ง request ไปหลังบ้านเพื่อ save ลง database
-    // // 2 - ทำการ อัพเดท state ของ AllTodo == React จะทำการ Rerender
-    // // data = []
-    // // data = [{id:number,task:string,status:boolean,due_date:YYYY-MM-DD}]
-    // //oldState = [{o},{o},{o}] === props.data
-    // // newState = [{n},{o},{o}]
-
-   
-    // const newTodo = {
-    //   id:nanoid(),
-    //   task:taskInput,
-    //   status:false,
-    //   due_date:"2023-01-09"};
-    // // const newTodoLists = [newTodo,...props.data];
-    //End logic : For create ToDo
-
-    // props.setTodo((prev)=>[newTodo,...prev]);
-
-    //send taskInput to addTodo
-    ////////////////////////////////////////////////////
+  
     props.addTodo(taskInput);
     
     props.setIsOpenForm(false);
@@ -84,8 +33,7 @@ function TodoForm(props) {
 
   const handleCancel = function(){
     console.log('cancel');
-    // correctName : setIsOpenForm(false)
-    // incorrectName : undefined (false) => ระเบิดแดง แน่นวล
+   
     props.setIsOpenForm(false);
     
   }

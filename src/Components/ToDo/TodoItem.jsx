@@ -6,13 +6,12 @@ import { useState } from "react";
 import TodoForm from './TodoForm'
 
 
-function TodoItem({id,task,done,date}) { // {task,done,date}
+function TodoItem({id,task,done,date}) { 
 
-  // Object Destucturing (props)
-    //  const {task,done,date} = props;
+
 
      const [isOpenForm,setIsOpenForm] = useState(false);
-    // console.log(id); // เลข nanoiID
+   
      const handleClick = () =>
     {
       setIsOpenForm(!isOpenForm);

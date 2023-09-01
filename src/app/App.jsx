@@ -29,7 +29,6 @@ const data = [
 function App() {
   const [allTodos, setAllTodos] = useState(data);
 
-  // console.log();
   const addTodo = function (taskName)
   {
     const newTodo = {
@@ -42,6 +41,11 @@ function App() {
     console.log(newTodo.id);
   }
 
+  // Delete
+  const deleteTodo = function (todoId)
+  {
+
+  }
 
   return (
     <div className='todo'>
@@ -55,7 +59,7 @@ function App() {
         <main className='todo__container'>
           <TodoHeader />
           <TodoCreate data={allTodos} 
-          // setTodo={setAllTodos}
+    
           addTodo={addTodo}/>
 
           <TodoLists data={allTodos}/>
