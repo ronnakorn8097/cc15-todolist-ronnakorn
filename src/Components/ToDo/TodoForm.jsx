@@ -7,7 +7,7 @@ import { useState } from 'react';
 function TodoForm(props) {
   
   const [isError , setIsError] = useState(false);
-  const [taskInput,setTaskInput] = useState("");
+  const [taskInput,setTaskInput] = useState(props.oldTodo?.task || '');
 
   
   const handleChangeInput =function (event) {
@@ -25,9 +25,11 @@ function TodoForm(props) {
       setIsError(true);
       return;
     }
-  
-    props.addTodo(taskInput);
-    
+   if(props.addTodo) props.addTodo(taskInput); // ถ้ามี
+    else if(props.editTodo && props.oldTodo)
+    {
+      props.editTodo(props.oldTodo.id,{task:taskInput});
+    }
     props.setIsOpenForm(false);
   }
 

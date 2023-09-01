@@ -25,7 +25,12 @@ function TodoItem({id,task,done,date,deleteTodo,editTodo}) {
   return (
     <>
     
-    { isOpenForm ?  ( <TodoForm textSubmit="Edit Task" setIsOpenForm={setIsOpenForm}/> ) :
+    { isOpenForm ?  ( 
+    <TodoForm textSubmit="Edit Task" 
+    setIsOpenForm={setIsOpenForm} 
+    editTodo={editTodo}
+    oldTodo = {{id,task,done,date}}
+    /> ) :
     <li className={styles.todo}>
       <div className={`${styles.todo__checkbox} ${done ? styles.todo__checkbox__done : ''}`}>
         <HiOutlineCheck className={styles.todo__checkbox__icon}

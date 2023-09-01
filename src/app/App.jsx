@@ -48,7 +48,7 @@ function App() {
 
     // check ว่า id นั้นอยู่ ตำแหน่งไหนของ array
     // console.log(todoId); // ได้ ID จาก Array มาแล้ว ส่ง nonioId มา ได้ละ
-    // วิธีที่ทำ
+    // 
     const deleteTodo = allTodos.filter((obj)=> todoId != obj.id)
     setAllTodos(deleteTodo);
     console.log('delete ID', todoId);
@@ -91,8 +91,9 @@ function App() {
       //   else {
       //     return {...todo,...newTodoObj};
       //   }
-      //   setAllTodos(newTodoLists);
+       
       // })
+      // setAllTodos(newTodoLists);
 
       // Practice 3 
       const newTodoLists = allTodos.reduce((acc,todo)=>
