@@ -51,29 +51,34 @@ function TodoForm(props) {
      // Start Logic : For Cerate ToDo
     if(taskInput.trim()=='')
     {
-      console.log('error');
       setIsError(true);
       return;
     }
-    console.log('Submited == Create new todo');
-    // create new todo
-    // 1 - ส่ง request ไปหลังบ้านเพื่อ save ลง database
-    // 2 - ทำการ อัพเดท state ของ AllTodo == React จะทำการ Rerender
-    // data = []
-    // data = [{id:number,task:string,status:boolean,due_date:YYYY-MM-DD}]
-    //oldState = [{o},{o},{o}] === props.data
-    // newState = [{n},{o},{o}]
+    ///////////// ไม่ใช้แล่ว - 79 //////////////////////
+    // console.log('Submited == Create new todo');
+    // // create new todo
+    // // 1 - ส่ง request ไปหลังบ้านเพื่อ save ลง database
+    // // 2 - ทำการ อัพเดท state ของ AllTodo == React จะทำการ Rerender
+    // // data = []
+    // // data = [{id:number,task:string,status:boolean,due_date:YYYY-MM-DD}]
+    // //oldState = [{o},{o},{o}] === props.data
+    // // newState = [{n},{o},{o}]
 
    
-    const newTodo = {
-      id:nanoid(),
-      task:taskInput,
-      status:false,
-      due_date:"2023-01-09"};
-    // const newTodoLists = [newTodo,...props.data];
+    // const newTodo = {
+    //   id:nanoid(),
+    //   task:taskInput,
+    //   status:false,
+    //   due_date:"2023-01-09"};
+    // // const newTodoLists = [newTodo,...props.data];
     //End logic : For create ToDo
 
-    props.setTodo((prev)=>[newTodo,...prev]);
+    // props.setTodo((prev)=>[newTodo,...prev]);
+
+    //send taskInput to addTodo
+    ////////////////////////////////////////////////////
+    props.addTodo(taskInput);
+    
     props.setIsOpenForm(false);
   }
 

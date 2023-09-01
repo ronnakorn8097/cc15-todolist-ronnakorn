@@ -66,7 +66,8 @@ const [isOpenForm,setIsOpenForm] = useState(false);
     { isOpenForm ? ( <TodoForm textSubmit="Add Task" 
     setIsOpenForm={setIsOpenForm} 
     data={props.data}
-    setTodo={props.setTodo}
+    // setTodo={props.setTodo}
+    addTodo = {props.addTodo}
     />
     ) : <div className={styles.todo__create} onClick={handleClick}>
     <div className={styles.todo__create__button}>
